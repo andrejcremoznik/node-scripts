@@ -11,16 +11,17 @@ This script will parse a folder with SVGs, run them through SVGO (optimizer) and
 Instructions are for Linux but should also work on Macs. NodeJS is required.
 
 You need to configure a user writeable global npm directory (e.g. `node` inside your home) and a directory for executable scripts (e.g. `bin`). Those need to be in the `$PATH` so that the apps are usable from command line. Install SVGO globally, download this script and make it executable.
-  ```
-  mkdir ~/{node,bin}
-  npm config set prefix ~/node
-  echo "PATH=$HOME/bin:$HOME/node/bin:$PATH" >> .bashrc
-  echo "export NODE_PATH=$HOME/node/lib/node_modules" >> .bashrc
-  source .bashrc
-  npm i -g svgo # release 0.7.2 is bugged, try npm i -g svg/svgo#master
-  curl -O ~/bin/svg-sprite-gen.js https://raw.githubusercontent.com/andrejcremoznik/node-scripts/svg-sprite-gen/svg-sprite-gen.js
-  chmod u+x ~/bin/svg-sprite-gen.js
-  ```
+
+```
+mkdir ~/{node,bin}
+npm config set prefix ~/node
+echo "PATH=$HOME/bin:$HOME/node/bin:$PATH" >> .bashrc
+echo "export NODE_PATH=$HOME/node/lib/node_modules" >> .bashrc
+source .bashrc
+npm i -g svgo # release 0.7.2 is bugged, try npm i -g svg/svgo#master
+curl -o ~/bin/svg-sprite-gen.js https://raw.githubusercontent.com/andrejcremoznik/node-scripts/master/svg-sprite-gen/svg-sprite-gen.js
+chmod u+x ~/bin/svg-sprite-gen.js
+```
 
 **Input SVG requirements**
 
